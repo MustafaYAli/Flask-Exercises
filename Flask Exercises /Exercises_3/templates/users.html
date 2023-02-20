@@ -1,0 +1,18 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+	Registered Users
+{% endblock %}
+
+{% block content %}
+	<h1>Registered Users</h1>
+	{% if registered_users %}
+		<ul>
+		{% for name, organization in registered_users.items() %}
+			<li>{{ name }} - {{ organization }}</li>
+		{% endfor %}
+		</ul>
+	{% else %}
+		<p>No registered users.</p>
+	{% endif %}
+{% endblock %}
